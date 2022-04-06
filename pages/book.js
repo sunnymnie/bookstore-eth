@@ -1,17 +1,17 @@
 import { Modal } from "@components/common";
 import {
-    CourseHero,
+    BookHero,
     Curriculum,
     Keypoints
-} from "@components/course";
+} from "@components/book";
 import { BaseLayout } from "@components/layout";
 
-export default function Course() {
+export default function Book() {
 
     return (
         <>
             <div className="py-4">
-                <CourseHero />
+                <BookHero />
             </div>
             <Keypoints />
             <Curriculum />
@@ -20,4 +20,4 @@ export default function Course() {
     )
 }
 
-Course.Layout = BaseLayout
+Book.Layout = BaseLayout

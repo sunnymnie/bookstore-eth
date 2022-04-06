@@ -1,11 +1,12 @@
 
 import { Hero, Breadcrumbs } from "@components/common"
-import { CourseList } from "@components/course"
+import { BookList } from "@components/book"
 import { BaseLayout } from "@components/layout"
 import { OrderCard } from "@components/order"
 import { EthRates, WalletBar } from "@components/web3"
+import { getAllBooks } from "@content/books/fetcher"
 
-export default function Home() {
+export default function Home({ books }) {
   return (
     <>
       <Hero />
@@ -13,9 +14,20 @@ export default function Home() {
       <WalletBar />
       <EthRates />
       <OrderCard />
-      <CourseList />
+      {/* {JSON.stringify(books)} */}
+      <BookList books={books} />
     </>
   )
 }
+
+export function getStaticProps() {
+  const { data } = getAllBooks()
+  return {
+    props: {
+      books: data
+    }
+  }
+}
+
 
 Home.Layout = BaseLayout
