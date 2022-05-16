@@ -5,7 +5,7 @@ import useSWR from "swr"
 export const handler = (web3, provider) => () => {
 
     const adminAddresses = {
-        "0xd8C1bAeb817b048634667695E90123Ab636fEBa5": true
+        "0x26a84006ff7d9b0f6f85a5a6a5d0b41e60c5f4e7c286b9d0051db2031b8fa622": true
     }
 
     const { data, mutate, ...rest } = useSWR(() =>
@@ -26,7 +26,9 @@ export const handler = (web3, provider) => () => {
     return {
         account: {
             data,
-            isAdmin: (data && adminAddresses[data]) ?? false,
+            isAdmin: (
+                data &&
+                adminAddresses[web3.utils.keccak256(data)]) ?? false,
             mutate,
             ...rest
         }
