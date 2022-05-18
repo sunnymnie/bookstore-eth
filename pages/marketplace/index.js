@@ -2,10 +2,9 @@ import { BookList, BookCard } from "@components/ui/book"
 import { BaseLayout } from "@components/ui/layout"
 import { getAllBooks } from "@content/books/fetcher"
 import { WalletBar } from "@components/ui/web3"
-import { useAccount } from "@components/hooks/web3/useAccount"
-import { useNetwork } from "@components/hooks/web3/useNetwork"
+import { useAccount, useNetwork } from "@components/hooks/web3"
 
-export default function Marketplace({books}) {
+export default function Marketplace({ books }) {
     const { account } = useAccount()
     const { network } = useNetwork()
 
@@ -14,7 +13,12 @@ export default function Marketplace({books}) {
             <div className="py-4">
                 <WalletBar
                     address={account.data}
-                    network={network.data}
+                    network={{
+                        data: network.data,
+                        target: network.target,
+                        isSupported: network.isSupported,
+                        hasInitialResponse: network.hasInitialResponse
+                    }}
                 />
             </div>
             <BookList books={books}>

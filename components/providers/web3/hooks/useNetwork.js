@@ -10,10 +10,11 @@ const NETWORKS = {
     56: "Binance Smart Chain",
     1337: "Ganache",
 }
+const targetNetwork = NETWORKS[process.env.NEXT_PUBLIC_TARGET_CHAIN_ID]
 
 export const handler = (web3, provider) => () => {
 
-    const { mutate, ...rest } = useSWR(() =>
+    const { data, mutate, ...rest } = useSWR(() =>
         web3 ? "web3/network" : null,
         async () => {
             const chainId = await web3.eth.getChainId()
@@ -23,16 +24,17 @@ export const handler = (web3, provider) => () => {
 
     useEffect(() => {
         provider &&
-        provider.on("chainChanged", chainId => {
-            mutate(NETWORKS[parseInt(chainId, 16)])
-        })
+            provider.on("chainChanged", chainId => {
+                mutate(NETWORKS[parseInt(chainId, 16)])
+            })
     }, [web3])
 
 
     return {
-        network: {
-            mutate,
-            ...rest
-        }
+        data,
+        mutate,
+        target: targetNetwork,
+        isSupported: data === targetNetwork,
+        ...rest
     }
 }

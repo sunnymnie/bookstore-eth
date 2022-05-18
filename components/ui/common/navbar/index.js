@@ -2,10 +2,10 @@
 import { useWeb3 } from "@components/providers"
 import Link from "next/link"
 import { Button } from "@components/ui/common"
-import { useAccount } from "@components/hooks/web3/useAccount"
+import { useAccount } from "@components/hooks/web3"
 
 export default function Navbar() {
-  const { connect, isLoading, isWeb3Loaded } = useWeb3()
+  const { connect, isLoading, requireInstall } = useWeb3()
   const { account } = useAccount()
   const name = (address) => {
     return address.toString().slice(0, 6) + "..." + address.toString().slice(-4)
@@ -18,51 +18,51 @@ export default function Navbar() {
             <div>
               <Link href="/" >
                 <a
-                    className="font-medium mr-8 text-gray-500 hover:text-gray-900">
-                    Home
+                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                  Home
                 </a>
               </Link>
               <Link href="/marketplace" >
                 <a
-                    className="font-medium mr-8 text-gray-500 hover:text-gray-900">
-                    Marketplace
+                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                  Marketplace
                 </a>
               </Link>
               <Link href="/" >
                 <a
-                    className="font-medium mr-8 text-gray-500 hover:text-gray-900">
-                    Blogs
+                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                  Blogs
                 </a>
               </Link>
             </div>
             <div>
               <Link href="/" >
                 <a
-                    className="font-medium mr-8 text-gray-500 hover:text-gray-900">
-                    Wishlist
+                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                  Wishlist
                 </a>
               </Link>
-              { isLoading ?
+              {isLoading ?
+                <Button
+                  disabled={true}
+                  onClick={connect}>
+                  Loading...
+                </Button> :
+                account.data ?
                   <Button
-                      disabled={true}
-                      onClick={connect}>
-                    Loading...
+                    hoverable={false}
+                    className="cursor-default">
+                    Hi there {account.isAdmin ? "Admin" : name(account.data)}
                   </Button> :
-                  isWeb3Loaded ?
-                  account.data ?
-                      <Button
-                          hoverable={false}
-                          className="cursor-default">
-                        Hi there {account.isAdmin ? "Admin" : name(account.data)}
-                      </Button> :
-                  <Button
-                      onClick={connect}>
-                    Connect
-                  </Button> :
-                  <Button
+                  requireInstall ?
+                    <Button
                       onClick={() => window.open("https://metamask.io/download.html", "_blank")}>
-                    Install Metamask
-                  </Button>
+                      Install Metamask
+                    </Button> :
+                    <Button
+                      onClick={connect}>
+                      Connect
+                    </Button>
               }
             </div>
           </div>
