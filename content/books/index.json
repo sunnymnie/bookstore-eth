@@ -1,34 +1,32 @@
 [
     {
-        "id": "1410474",
-        "type": "Next JS",
-        "title": "Next JS & Typescript with Shopify Integration - Full Guide",
-        "description": "Learn modern Next JS(Next 10+). Code everything in Typescript and integrate with Shopify.",
-        "coverImage": "https://thrangra.sirv.com/Next_TypeScript_Shopify_Final.jpg",
-        "author": "Filip Jerga",
-        "link": "https://academy.eincode.com/courses/next-js-typescript-with-shopify-integration-full-guide",
-        "slug": "next-js-typescript-with-shopify-integration-full-guide",
+        "id": "1",
+        "type": "Template",
+        "title": "Template book",
+        "description": "This is the template book that I use to create book summaries.",
+        "coverImage": "https://raw.githubusercontent.com/sunnymnie/book-summaries/main/images/template.png",
+        "author": "Sunny Nie",
+        "link": "https://github.com/sunnymnie/book-summaries/blob/main/template.pdf",
+        "slug": "template-book",
         "wsl": [
-            "Build Next JS apps on your own",
-            "Build ecommerce apps with modern technologies",
+            "Template book",
+            "Learn to make pdf book summaries",
             "Use Shopify to your advantage"
         ],
         "createdAt": ""
     },
     {
-        "id": "1331625",
-        "type": "Gatsby JS",
-        "title": "Gatsby JS Developer's Guide - Important Parts & Blog App",
-        "description": "Learn popular Gatsby JS(Gatsby v3) framework. Use React/GraphQL to build your own blog page with JAMStack architecture.",
-        "coverImage": "https://thrangra.sirv.com/Gatsby.jpeg",
-        "author": "Filip Jerga",
-        "link": "https://academy.eincode.com/courses/gatsby-js-developer-s-guide-important-parts-blog-app",
-        "slug": "gatsby-js-developer-s-guide-important-parts-blog-app",
+        "id": "2",
+        "type": "Skills",
+        "title": "Never Split the Difference: Negotiating As If Your Life Depended On It",
+        "description": "Rooted in the real-life experiences of an intelligence professional at the top of his game, Never Split the Difference will give you the competitive edge in any discussion.",
+        "coverImage": "https://raw.githubusercontent.com/sunnymnie/book-summaries/main/images/never-split-the-difference.jpeg",
+        "author": "Sunny Nie",
+        "link": "https://github.com/sunnymnie/book-summaries/blob/main/never-split-the-difference.pdf",
+        "slug": "never-split-the-difference-negotiating-as-if-your-life-depended-on-it",
         "wsl": [
-            "Build Gatsby JS apps on your own",
-            "Build static page apps with modern technologies",
-            "Understand meaning and benefits of JAMStack",
-            "Use GraphQL to your advantage"
+            "Learn how to negotiate",
+            "Why negotiation is everywhere"
         ],
         "createdAt": ""
     },

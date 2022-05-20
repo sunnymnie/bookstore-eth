@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Card({ book }) {
+export default function Card({ book, Footer }) {
     return (
         <div key={book.id} className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div className="flex h-full">
@@ -26,6 +26,9 @@ export default function Card({ book }) {
                         </a>
                     </Link>
                     <p className="mt-2 text-gray-500">{book.description}</p>
+                    {Footer &&
+                        <Footer />
+                    }
                 </div>
             </div>
         </div>

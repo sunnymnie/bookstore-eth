@@ -3,6 +3,7 @@ import { BaseLayout } from "@components/ui/layout"
 import { getAllBooks } from "@content/books/fetcher"
 import { WalletBar } from "@components/ui/web3"
 import { useAccount, useNetwork } from "@components/hooks/web3"
+import { Button } from "@components/ui/common"
 
 export default function Marketplace({ books }) {
     const { account } = useAccount()
@@ -26,6 +27,13 @@ export default function Marketplace({ books }) {
                     <BookCard
                         key={book.id}
                         book={book}
+                        Footer={() =>
+                            <div className="mt-4">
+                                <Button variant="lightPurple">
+                                    Purchase
+                                </Button>
+                            </div>
+                        }
                     />
                 }
             </BookList>

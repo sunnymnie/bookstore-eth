@@ -7,20 +7,20 @@ import { EthRates, WalletBar } from "@components/ui/web3"
 import { getAllBooks } from "@content/books/fetcher"
 
 export default function Home({ books }) {
-    return (
+  return (
     <>
-        <Hero />
+      <Hero />
       <Breadcrumbs />
-      <WalletBar />
+      {/* <WalletBar /> */}
       <EthRates />
       <OrderCard />
       <BookList books={books}>
-          {book =>
-              <BookCard
-                  key={book.id}
-                  book={book}
-              />
-          }
+        {book =>
+          <BookCard
+            key={book.id}
+            book={book}
+          />
+        }
       </BookList>
     </>
   )
