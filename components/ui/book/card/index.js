@@ -7,25 +7,28 @@ export default function Card({ book, Footer }) {
     return (
         <div key={book.id} className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div className="flex h-full">
-                <div className="flex h-full">
-                    <Image
-                        className="object-cover"
-                        src={book.coverImage}
-                        layout="fixed"
-                        width="200"
-                        height="230"
-                        alt={book.title}
-                    />
+                <div className="flex-1 h-full next-image-wrapper">
+                    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+                        <Image
+                            className="object-cover"
+                            src={book.coverImage}
+                            layout="fill"
+                            // width="100%"
+                            // height="100%"
+                            // objectFit="contain"
+                            alt={book.title}
+                        />
+                    </div>
                 </div>
-                <div className="p-8">
+                <div className="p-8 pb-4 flex-2">
                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{book.type}</div>
                     <Link href={`/summaries/${book.slug}`}>
                         <a
-                            className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+                            className="h-12 block mt-1 text-lg leading-tight font-medium text-black hover:underline">
                             {book.title}
                         </a>
                     </Link>
-                    <p className="mt-2 text-gray-500">{book.description}</p>
+                    <p className="mt-2 text-gray-500">{book.description.substring(0, 70)}...</p>
                     {Footer &&
                         <Footer />
                     }
