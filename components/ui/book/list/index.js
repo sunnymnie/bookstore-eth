@@ -1,8 +1,8 @@
 
-export default function List({books, children}) {
+export default function List({ books, children }) {
   return (
-      <section className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
-        { books.map(book => children(book))}
-      </section>
+    <section className="grid md:grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
+      {books.map(book => children(book))}
+    </section>
   )
 }

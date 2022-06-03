@@ -12,7 +12,7 @@ export const useEthPrice = () => {
     const swrRes = useSWR(
         URL,
         fetcher,
-        { refreshInterval: 1000 }
+        { refreshInterval: 10000 }
     )
 
     return { eth: { ...swrRes } }

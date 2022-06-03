@@ -3,14 +3,14 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Card({ book, Footer }) {
+export default function Card({ book, disabled, Footer }) {
     return (
         <div key={book.id} className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
             <div className="flex h-full">
                 <div className="flex-1 h-full next-image-wrapper">
                     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
                         <Image
-                            className="object-cover"
+                            className={`object-cover ${disabled && "filter grayscale"}`}
                             src={book.coverImage}
                             layout="fill"
                             // width="100%"
@@ -21,7 +21,7 @@ export default function Card({ book, Footer }) {
                     </div>
                 </div>
                 <div className="p-8 pb-4 flex-2">
-                    <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{book.type}</div>
+                    <div className="uppercase tracking-wide text-sm text-main font-semibold">{book.type}</div>
                     <Link href={`/summaries/${book.slug}`}>
                         <a
                             className="h-12 block mt-1 text-lg leading-tight font-medium text-black hover:underline">

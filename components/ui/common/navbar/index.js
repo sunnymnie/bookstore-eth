@@ -18,27 +18,21 @@ export default function Navbar() {
             <div>
               <Link href="/" >
                 <a
-                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                  className="font-medium mr-8 text-dark hover:text-hover">
                   Home
                 </a>
               </Link>
               <Link href="/marketplace" >
                 <a
-                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                  className="font-medium mr-8 text-dark hover:text-hover">
                   Marketplace
-                </a>
-              </Link>
-              <Link href="/" >
-                <a
-                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
-                  Blogs
                 </a>
               </Link>
             </div>
             <div>
               <Link href="/" >
                 <a
-                  className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                  className="font-medium mr-8 text-dark hover:text-hover">
                   Wishlist
                 </a>
               </Link>
