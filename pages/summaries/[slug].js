@@ -5,9 +5,9 @@ import {
     Keypoints
 } from "@components/ui/book";
 import { BaseLayout } from "@components/ui/layout";
-import {getAllBooks} from "@content/books/fetcher";
+import { getAllBooks } from "@content/books/fetcher";
 
-export default function Book({book}) {
+export default function Book({ book }) {
 
     return (
         <>
@@ -43,7 +43,7 @@ export function getStaticPaths() {
 }
 
 
-export function getStaticProps({params}) {
+export function getStaticProps({ params }) {
     const { data } = getAllBooks()
     const book = data.filter(c => c.slug === params.slug)[0]
 

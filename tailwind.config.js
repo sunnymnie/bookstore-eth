@@ -14,7 +14,7 @@ module.exports = {
         "hover": "#A2C8D0",
         "dark": "#2F2F60",
         "light": "#D6E7EA",
-        "error": "#B29189"
+        "error": "#FF9999"
       }
     },
   },

@@ -6,6 +6,10 @@
     min-height: calc(100vh - 88px);
 }
 
+.thumbnail {
+    filter: grayscale(70%);
+}
+
 /* 
 span {
     height: 100%;

@@ -10,7 +10,7 @@ export default function Card({ book, disabled, Footer }) {
                 <div className="flex-1 h-full next-image-wrapper">
                     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
                         <Image
-                            className={`object-cover ${disabled && "filter grayscale"}`}
+                            className={`thumbnail object-cover ${disabled && "filter grayscale"}`}
                             src={book.coverImage}
                             layout="fill"
                             // width="100%"
